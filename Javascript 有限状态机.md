@@ -107,9 +107,32 @@ console.log('Is rect an instance of Shape?',
 rect.move(1, 1); // Outputs, 'Shape moved.'
 ```
 
-#### ES6中的mixin式继承
+#### 逻辑分析
 
-mixin弥补了Javascript单一原型链的缺陷，可以实现类似于多重继承的效果。
+* init  初始状态
+* transition   状态表
+  * name
+  * from  可以是个数组，可以为*
+  * to
+* methods中的Lifecycle函数   与.observe() 作用一致
+  * `onBeforeTransition` - fired before any transition
+  * `onBefore<TRANSITION>` - fired before a specific TRANSITION
+  * `onLeaveState` - fired when leaving any state
+  * `onLeave<STATE>` - fired when leaving a specific STATE
+  * `onTransition` - fired during any transition
+  * `onEnterState` - fired when entering any state
+  * `onEnter<STATE>` - fired when entering a specific STATE
+  * `on<STATE>` - convenience shorthand for `onEnter<STATE>`
+  * `onAfterTransition` - fired after any transition
+  * `onAfter<TRANSITION>` - fired after a specific TRANSITION
+  * `on<TRANSITION>` - convenience shorthand for `onAfter<TRANSITION>`
+* ErroHandling
+* State History
+* State Machine Factory
+
+
+
+
 
 
 
